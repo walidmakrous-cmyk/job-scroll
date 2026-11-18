@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09152f">
+  <meta name="description" content="JOB SCROLL : découvre des offres d'emploi partout en France.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>JOB SCROLL — Trouve ton prochain emploi</title>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="JOB SCROLL accueil"><span class="brand-mark">J</span> JOB <b>SCROLL</b></a>
+    <nav><button class="nav-btn active" data-view="jobs">Découvrir</button><button class="nav-btn" data-view="favorites">Favoris <span id="fav-count">0</span></button></nav>
+    <button id="account-open" class="outline-btn">Mon compte</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div><p class="eyebrow">L'emploi, autrement</p><h1>Ton prochain job<br><span>en un scroll.</span></h1>
+      <p class="hero-copy">Découvre des métiers, trouve une offre et postule en quelques clics.</p></div>
+      <div class="hero-art" aria-hidden="true"><div class="art-card card-one">↗<small>Nouvelle opportunité</small></div><div class="art-card card-two">★<small>À garder en favori</small></div><div class="art-orb"></div></div>
+    </section>
+
+    <section class="search-panel">
+      <label class="search-field"><span>⌕</span><input id="search" type="search" placeholder="Métier, mot-clé, entreprise…"></label>
+      <label class="search-field"><span>⌖</span><input id="location" type="search" placeholder="Ville ou département"></label>
+      <label class="select-field"><span>Contrat</span><select id="contract"><option value="">Tous les contrats</option><option>CDI</option><option>CDD</option><option>Intérim</option><option>Alternance</option><option>Stage</option></select></label>
+      <button id="reset" class="reset-btn">Effacer</button>
+    </section>
+
+    <div class="section-heading"><div><p class="eyebrow" id="view-eyebrow">À découvrir</p><h2 id="view-title">Des opportunités pour toi</h2></div><span id="results-count" class="muted"></span></div>
+    <div id="demo-notice" class="notice">Mode démonstration : ces annonces sont fictives. Connecte une source d'offres autorisée avant toute mise en production.</div>
+    <section id="jobs" class="job-grid" aria-live="polite"></section>
+    <section id="empty" class="empty hidden"><div>✦</div><h3>Aucune offre trouvée</h3><p>Essaie un autre mot-clé ou modifie tes filtres.</p></section>
+  </main>
+
+  <dialog id="account-dialog">
+    <form method="dialog" class="dialog-head"><div><p class="eyebrow">Espace candidat</p><h2>Ton compte</h2></div><button class="close-btn" aria-label="Fermer">×</button></form>
+    <div class="auth-tabs"><button class="auth-tab active" data-auth="signup">Créer un compte</button><button class="auth-tab" data-auth="login">Se connecter</button></div>
+    <form id="auth-form" class="auth-form">
+      <label>Adresse e-mail<input id="email" type="email" required placeholder="toi@exemple.fr"></label>
+      <label>Mot de passe<input id="password" type="password" required minlength="6" placeholder="6 caractères minimum"></label>
+      <button class="primary-btn" id="auth-submit" type="submit">Créer mon compte</button>
+      <p id="auth-message" class="form-message">Configure Supabase dans config.js pour activer les comptes.</p>
+    </form>
+  </dialog>
+  <footer><span>© <span id="year"></span> JOB SCROLL</span><span>Une recherche d'emploi plus simple.</span></footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

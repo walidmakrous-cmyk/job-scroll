@@ -1,0 +1,9 @@
+{
+  "name": "JOB SCROLL",
+  "short_name": "JOB SCROLL",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f8fc",
+  "theme_color": "#09152f",
+  "description": "Découvre des offres d'emploi partout en France."
+}
