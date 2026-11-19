@@ -720,3 +720,75 @@ footer {
     width: 100%;
   }
 }
+/* JOB SCROLL — FIL VERTICAL */
+#jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.job-card {
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 12px 35px rgba(9, 21, 47, .10);
+  border: 1px solid #e5ebf5;
+}
+
+.job-photo {
+  height: 230px;
+}
+
+.job-body {
+  padding: 24px;
+}
+
+.job-body h3 {
+  font-size: 23px;
+}
+
+.job-desc {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.job-actions {
+  margin-top: 18px;
+}
+
+.primary-btn {
+  min-height: 46px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.secondary-btn {
+  min-height: 46px;
+  border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+  #jobs {
+    gap: 18px;
+    padding-bottom: 25px;
+  }
+
+  .job-card {
+    border-radius: 20px;
+  }
+
+  .job-photo {
+    height: 210px;
+  }
+
+  .job-body {
+    padding: 19px;
+  }
+
+  .job-body h3 {
+    font-size: 21px;
+  }
+}
