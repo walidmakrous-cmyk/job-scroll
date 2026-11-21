@@ -792,3 +792,72 @@ footer {
     font-size: 21px;
   }
 }
+
+/* JOB SCROLL — DEFILEMENT VERTICAL */
+#jobs {
+  display: flex !important;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 760px;
+  max-height: 78svh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 5px 8px 20px;
+  margin: 0 auto;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+#jobs .job-card {
+  flex: 0 0 72svh;
+  min-height: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+#jobs .job-photo {
+  height: 34%;
+  min-height: 180px;
+  flex-shrink: 0;
+}
+
+#jobs .job-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+}
+
+#jobs .job-desc {
+  flex: 1;
+}
+
+#jobs .job-actions {
+  margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+  #jobs {
+    max-height: 75svh;
+    gap: 14px;
+  }
+
+  #jobs .job-card {
+    flex-basis: 68svh;
+    min-height: 490px;
+  }
+
+  #jobs .job-photo {
+    min-height: 165px;
+  }
+
+  #jobs .job-body {
+    padding: 18px;
+  }
+}
