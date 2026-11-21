@@ -35,4 +35,4 @@ $("#reset").addEventListener("click",()=>{$("#search").value="";$("#location").v
 document.querySelectorAll(".nav-btn").forEach(b=>b.addEventListener("click",()=>{view=b.dataset.view;document.querySelectorAll(".nav-btn").forEach(x=>x.classList.toggle("active",x===b));render()}));
 $("#account-open").addEventListener("click",()=>$("#account-dialog").showModal());
 $("#auth-form").addEventListener("submit",async e=>{e.preventDefault();const msg=$("#auth-message");if(!supabase){msg.textContent="Les comptes ne sont pas encore activés. Configure Supabase dans config.js puis recharge la page.";return}const email=$("#email").value,password=$("#password").value;$("#auth-submit").disabled=true;try{const result=authMode==="signup"?await supabase.auth.signUp({email,password}):await supabase.auth.signInWithPassword({email,password});if(result.error)throw result.error;msg.textContent=authMode==="signup"?"Compte créé. Vérifie ta boîte e-mail si la confirmation est activée.":"Connexion réussie."}catch(err){msg.textContent=err.message||"Une erreur est survenue."}finally{$("#auth-submit").disabled=false}});
-
+render();
